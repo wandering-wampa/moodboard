@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoodBoard</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>MoodBoard</h1>
+      <p class="tagline">Tell us how you feel. We'll find what to watch, read, or play.</p>
+    </header>
+
+    <form id="mood-form">
+      <div class="input-row">
+        <input
+          type="text"
+          id="mood-input"
+          placeholder="e.g. dark and broody, something cozy, I want to cry a little..."
+          autocomplete="off"
+          autofocus
+        />
+        <button type="submit" id="submit-btn">Go</button>
+      </div>
+    </form>
+
+    <div id="loading" class="hidden">
+      <div class="spinner"></div>
+      <p>Finding the perfect matches...</p>
+    </div>
+
+    <div id="error" class="hidden"></div>
+
+    <div id="results" class="hidden">
+      <div class="cards">
+        <div class="card" id="card-movie" data-label="Movie"></div>
+        <div class="card" id="card-show" data-label="TV Show"></div>
+        <div class="card" id="card-book" data-label="Book"></div>
+        <div class="card" id="card-comic" data-label="Comic"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+services:
+  moodboard:
+    build: .
+    container_name: moodboard
+    env_file: .env
+    volumes:
+      - /path/to/calibre-library:/calibre-library:ro
+    ports:
+      - 8765:8000
+    networks:
+      - komga_default
+      - arr
+      - calibre_default
+    restart: unless-stopped
+
+networks:
+  komga_default:
+    external: true
+  arr:
+    external: true
+  calibre_default:
+    external: true
+    name: calibre-web-automated_default
